@@ -21,7 +21,7 @@ llvmrawprogram(
 simplerule(
     name="rom",
     ins=[".+bios", "src/bdos"],
-    outs=["=CPM65.RP6"],
+    outs=["=CPM.rp6502"],
     deps=["scripts/mkrp6502rom.py"],
     commands=[
         "python3 $[deps[0]] $[ins[0]] 0xd000 $[ins[1]] 0xe800 $[outs[0]]"

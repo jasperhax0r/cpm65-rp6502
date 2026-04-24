@@ -24,7 +24,7 @@ Place both files in the **root directory** of your FAT32 flash drive:
 
 | File | Purpose |
 |------|---------|
-| `CPM65.RP6` | CP/M-65 ROM (BIOS + BDOS) |
+| `CPM.rp6502` | CP/M-65 ROM (BIOS + BDOS) |
 | `CPMFS` | CP/M disk image (A: drive, 8MB, pre-loaded with utilities) |
 
 > **Important:** `CPMFS` must have no file extension — the firmware opens it by that exact name.
@@ -33,7 +33,7 @@ Place both files in the **root directory** of your FAT32 flash drive:
 
 1. Insert the flash drive into the RP6502
 2. Power on (or press reset)
-3. At the firmware menu, navigate to the ROM loader and select `CPM65.RP6`
+3. At the firmware menu, navigate to the ROM loader and select `CPM.rp6502`
 
 The firmware will load the ROM into RAM and start the 6502. You should see:
 
@@ -128,7 +128,7 @@ The RP6502 BIOS source files in this repo (`source/`) are the ones submitted to 
 If you already have BIOS and BDOS binaries you can repackage them without the full build system:
 
 ```bash
-python3 tools/mkrp6502rom.py bios.bin 0xd000 bdos.bin 0xe800 CPM65.RP6
+python3 tools/mkrp6502rom.py bios.bin 0xd000 bdos.bin 0xe800 CPM.rp6502
 ```
 
 ---
